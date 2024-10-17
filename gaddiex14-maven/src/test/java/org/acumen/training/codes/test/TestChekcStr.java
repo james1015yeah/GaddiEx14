@@ -7,7 +7,6 @@ import org.acumen.training.codes.ChekcStr;
 import org.acumen.training.codes.InvalidStringException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 public class TestChekcStr {
@@ -26,7 +25,6 @@ public class TestChekcStr {
 
 	@Test
 	public void testConvertValidInput() {
-
 		assertThrows(InvalidStringException.class, () -> {
 			String result = checkStr.convert("4");
 			assertEquals("100", result); 
@@ -34,8 +32,7 @@ public class TestChekcStr {
 	}
 
 	@Test
-	public void testConvertEmptyInput() {
-		
+	public void testConvertEmptyInput() {		
 		assertThrows(IllegalArgumentException.class, () -> {
 			checkStr.convert("");
 		});
@@ -59,11 +56,18 @@ public class TestChekcStr {
 		assertEquals("0", result); // Expect binary of 0 = "0"
 	}
 
-	@RepeatedTest(100)
+	@Test
 	public void testBinariseValidInput() {
-		String result = checkStr.binarise(4);
-		assertEquals("100", result); // Expect binary of 4 = "100"
+		String result = checkStr.binarise(15);
+		assertEquals("1111", result); // Expect binary of 4 = "100"
 	}
+
+	@Test
+	public void testBinariseCharInput() {
+		String result = checkStr.binarise('a');
+		assertEquals("1100001", result); // Expect binary of 0 = "0"
+	}
+
 
 	@Test
 	public void testBinariseNegativeInput() {

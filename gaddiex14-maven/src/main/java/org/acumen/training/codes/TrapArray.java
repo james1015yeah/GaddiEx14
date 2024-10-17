@@ -39,12 +39,16 @@ public class TrapArray {
 				break;
 			} catch (LetterSizeException e) {
 				LOGGER.error("LetterSizeException: Invalid array size provided.");
+				e.printStackTrace();
 			} catch (NegativeArraySizeException e) {
 				LOGGER.error("NegativeArraySizeException: Negative array size provided.");
+				e.printStackTrace();
 			} catch (NumberFormatException e) {
 				LOGGER.error("NumberFormatException: Non-integer array size.");
+				e.printStackTrace();
 			} catch (Exception e) {
-				LOGGER.error("Unexpected error: ", e);
+				e.printStackTrace();
+				LOGGER.error("Unexpected error: ", e.getMessage());
 			}
 		}
 	}
@@ -78,11 +82,16 @@ public class TrapArray {
 					array[i] = Integer.parseInt(inputElement);
 					break;
 				} catch (ElementCharException | ElementDecimalException e) {
-					LOGGER.error("Invalid element: ", e);
+					e.printStackTrace();
+					LOGGER.error("Invalid element: ", e.getMessage());
+					e.printStackTrace();
 				} catch (NumberFormatException e) {
 					LOGGER.error("Non-integer element provided.");
+					e.printStackTrace();
 				} catch (Exception e) {
-					LOGGER.error("Unexpected error: ", e);
+					LOGGER.error("Unexpected error: ", e.getMessage());
+					e.printStackTrace();
+
 				}
 			}
 		}

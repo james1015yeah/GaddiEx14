@@ -16,12 +16,10 @@
 			fileName="logs/traparray.log"
 			filePattern="logs/traparray-%d{yyyy-MM-dd}-%i.log">
 			<PatternLayout
-				pattern="%d{yyyy-MM-dd HH:mm:ss,SSS} - %p : %c{1} - %m%n" />
-			<Policies>
-				<TimeBasedTriggeringPolicy interval="1"
-					modulate="true" />
-				<SizeBasedTriggeringPolicy size="10MB" />
-			</Policies>
+				pattern="%p : %m%n" />
+			<TimeBasedTriggeringPolicy interval="1"
+				modulate="true" />
+			<DefaultRolloverStrategy max="10" />
 		</RollingFile>
 
 		<RollingFile name="ROLLINGFILE2"
@@ -47,7 +45,6 @@
 			<AppenderRef ref="FILE" />
 		</Logger>
 
-		<!-- Logger for TrapArray -->
 		<Logger name="TrapArray" level="INFO" additivity="false">
 			<AppenderRef ref="ROLLINGFILE" />
 		</Logger>

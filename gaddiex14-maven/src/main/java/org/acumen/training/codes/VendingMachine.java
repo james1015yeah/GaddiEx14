@@ -7,7 +7,8 @@ public class VendingMachine {
 
     private static final Logger logger = LogManager.getLogger("VendingMachine");
    
-    private int totValue;
+    @SuppressWarnings("unused")
+	private int totValue;
     private int currValue;
     private boolean enabled;
     private static final int COST = 75;
@@ -15,6 +16,7 @@ public class VendingMachine {
     public VendingMachine() {
         logger.info("VendingMachine instance created");
         totValue = 0;
+        logger.warn("totValue is unused");
         currValue = 0;
         enabled = false;
     }

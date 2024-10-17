@@ -1,2 +1,4 @@
-2024-10-17 08:19:19,646 - INFO : TrapArray - TrapArray starts. (2024-10-17)
-2024-10-17 08:19:23,255 - INFO : TrapArray - Array of 5 integers created. (2024-10-17)
+INFO : TrapArray starts. (2024-10-17)
+INFO : Array of 5 integers created. (2024-10-17)
+ERROR : Invalid element: 
+ERROR : Unexpected error: 
