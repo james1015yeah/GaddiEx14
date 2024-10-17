@@ -35,7 +35,9 @@ public class TestVendingMachine {
 		}
 
 		vendingMachine.returnCoins();
-
 		vendingMachine.insert(new Coin("InvalidCoin"));
 	}
 }
+
+
+

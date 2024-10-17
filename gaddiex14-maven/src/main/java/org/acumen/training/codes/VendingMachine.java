@@ -16,7 +16,6 @@ public class VendingMachine {
     public VendingMachine() {
         logger.info("VendingMachine instance created");
         totValue = 0;
-        logger.warn("totValue is unused");
         currValue = 0;
         enabled = false;
     }
@@ -31,8 +30,10 @@ public class VendingMachine {
             logger.info("Current value = " + currValue);
             if (currValue >= COST) {
                 enabled = true;
+                System.out.println( " (sufficient credit)" );
                 logger.info("Sufficient credit (current value: " + currValue + ")");
             } else {
+            	System.out.println( "" );
                 logger.info("Insufficient credit (current value: " + currValue + ")");
             }
         }

@@ -7,6 +7,7 @@ import org.acumen.training.codes.ChekcStr;
 import org.acumen.training.codes.InvalidStringException;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.RepeatedTest;
 import org.junit.jupiter.api.Test;
 
 public class TestChekcStr {
@@ -62,7 +63,7 @@ public class TestChekcStr {
 		assertEquals("1111", result); // Expect binary of 4 = "100"
 	}
 
-	@Test
+	@RepeatedTest(200)
 	public void testBinariseCharInput() {
 		String result = checkStr.binarise('a');
 		assertEquals("1100001", result); // Expect binary of 0 = "0"

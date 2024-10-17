@@ -15,8 +15,7 @@
 		<RollingFile name="ROLLINGFILE"
 			fileName="logs/traparray.log"
 			filePattern="logs/traparray-%d{yyyy-MM-dd}-%i.log">
-			<PatternLayout
-				pattern="%p : %m%n" />
+			<PatternLayout pattern="%p : %m%n" />
 			<TimeBasedTriggeringPolicy interval="1"
 				modulate="true" />
 			<DefaultRolloverStrategy max="10" />
@@ -26,13 +25,16 @@
 			fileName="logs/checkstr.log" filePattern="logs/checkstr-%i.log">
 			<PatternLayout
 				pattern="%d{yyyy/MM/dd HH:mm:ss,SSS} [ %-5level ] %c{1} – %m%n" />
-			<SizeBasedTriggeringPolicy size="10KB" />
+			<Policies>
+				<SizeBasedTriggeringPolicy size="10KB" />
+			</Policies>
 			<DefaultRolloverStrategy max="10" />
 		</RollingFile>
 
-		<File name="HTML" fileName="logs/vendolog.html">
-			<HTMLLayout title="Vending Machine Logs"
-				locationInfo="true" />
+		<File name="HTML" fileName="logs/vendolog.html" append="false">
+			<HTMLLayout charset="UTF-8" title="Vending Machine Logs"
+				locationInfo="false">
+			</HTMLLayout>
 		</File>
 	</Appenders>
 
